@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.indigo,
       ),
-      home: const MoedasBase(),
+      home: const MoedasPage(),
       debugShowCheckedModeBanner: false,
     );
   }

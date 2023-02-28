@@ -6,14 +6,14 @@ import 'package:intl/intl.dart';
 
 import 'models/moeda.dart';
 
-class MoedasBase extends StatefulWidget {
-  const MoedasBase({super.key});
+class MoedasPage extends StatefulWidget {
+  const MoedasPage({super.key});
 
   @override
-  State<MoedasBase> createState() => _MoedasBaseState();
+  State<MoedasPage> createState() => _MoedasPageState();
 }
 
-class _MoedasBaseState extends State<MoedasBase> {
+class _MoedasPageState extends State<MoedasPage> {
   final tabela = MoedaRepository.tabela;
 
   @override
