@@ -1,10 +1,11 @@
+import 'package:bank_corrupcy/pages/moedas_detalhes.dart';
 import 'package:bank_corrupcy/repository/moeda_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:intl/intl.dart';
 
-import 'models/moeda.dart';
+import '../models/moeda.dart';
 
 class MoedasPage extends StatefulWidget {
   const MoedasPage({super.key});
@@ -41,6 +42,11 @@ class _MoedasPageState extends State<MoedasPage> {
     }
   }
 
+  mostrarDetalhes(Moeda moeda) {
+    Navigator.push(context,
+        MaterialPageRoute(builder: (_) => MoedasDetalhesPage(moeda: moeda)));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,7 +56,7 @@ class _MoedasPageState extends State<MoedasPage> {
             itemBuilder: (BuildContext context, int moeda) {
               return ListTile(
                 leading: (selecionadas.contains(tabela[moeda]))
-                    ? CircleAvatar(
+                    ? const CircleAvatar(
                         child: Icon(Icons.check),
                       )
                     : SizedBox(
@@ -75,6 +81,7 @@ class _MoedasPageState extends State<MoedasPage> {
                         : selecionadas.add(tabela[moeda]);
                   });
                 },
+                onTap: () => mostrarDetalhes(tabela[moeda]),
               );
             },
             padding: const EdgeInsets.all(16.0),

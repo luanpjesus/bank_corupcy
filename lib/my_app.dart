@@ -1,6 +1,5 @@
+import 'package:bank_corrupcy/pages/moedas_base.dart';
 import 'package:flutter/material.dart';
-
-import 'Moedas_base.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

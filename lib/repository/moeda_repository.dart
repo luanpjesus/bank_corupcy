@@ -16,7 +16,7 @@ class MoedaRepository {
         icone: "images/ethereum.png",
         nome: "Ethereum",
         sigla: "ETH",
-        preco: 9823561),
+        preco: 9716),
     Moeda(icone: "images/xrp.png", nome: "XRP", sigla: "XRP", preco: 2381763),
     Moeda(
         icone: "images/usdcoin.png",
