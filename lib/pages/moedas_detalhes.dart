@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 
+import 'drop_page.dart';
+
 class MoedasDetalhesPage extends StatefulWidget {
   Moeda moeda;
   MoedasDetalhesPage({Key? key, required this.moeda}) : super(key: key);
@@ -22,7 +24,7 @@ class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
 
       Navigator.pop(context);
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
+        const SnackBar(
           content: Text("Compra realizada com sucesso!"),
           backgroundColor: Colors.cyan,
         ),
@@ -138,9 +140,16 @@ class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
                   ],
                 ),
               ),
-            )
+            ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (_) => DropPage()));
+        },
+        child: const Icon(Icons.arrow_right),
       ),
     );
   }
